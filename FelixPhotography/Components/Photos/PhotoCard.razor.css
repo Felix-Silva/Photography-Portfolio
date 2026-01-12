@@ -1,6 +1,10 @@
 ﻿.photo {
     width: 25%;
     height: auto;
-    display: block;
     border-radius: 12px;
+}
+
+.photo:hover {
+    transform: scale(1.01);
+    filter: brightness(0.7);
 }
