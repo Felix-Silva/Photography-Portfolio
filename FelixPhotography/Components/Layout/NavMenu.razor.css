@@ -15,7 +15,7 @@
 
 .site-header__brand {
     flex: 0 0 25%;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 600;
     text-decoration: none;
     color: var(--text);
@@ -29,6 +29,7 @@
 
 .site-header__nav a {
     color: var(--muted);
+    font-weight: bold;
     text-decoration: none;
     transition: color 0.2s ease;
 }

@@ -1,6 +1,6 @@
 ﻿.photo {
     width: 25%;
-    height: auto;
+    height: fit-content;
     border-radius: 12px;
 }
 
