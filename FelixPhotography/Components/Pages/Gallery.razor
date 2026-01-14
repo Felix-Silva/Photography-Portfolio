@@ -1,10 +1,23 @@
 ﻿@page "/Gallery"
+@using FelixPhotography.Components.Flex
 @using FelixPhotography.Components.Photos
 
 <PageTitle>Gallery</PageTitle>
 
-<div class="photo-grid">
-    <PhotoCard Src="images/DSC03428.jpg"></PhotoCard>
-    <PhotoCard Src="images/DSC03580.jpg"></PhotoCard>
-    <PhotoCard Src="images/IMGP8104.jpg"></PhotoCard>    
-</div>
+<Flex Gap="1rem" FullHeight="true" FullWidth="true" Margin="1rem">
+    <Flex Direction="column" Gap="1rem">
+        <PhotoCard Src="images/DSC03428.jpg"></PhotoCard>
+        <PhotoCard Src="images/DSC03580.jpg"></PhotoCard>
+        <PhotoCard Src="images/IMGP8104.jpg"></PhotoCard>    
+    </Flex>
+    <Flex Direction="column" Gap="1rem">
+        <PhotoCard Src="images/IMGP6995.JPG"></PhotoCard>
+        <PhotoCard Src="images/IMGP8550.jpg"></PhotoCard>
+        <PhotoCard Src="images/IMGP7404.jpg"></PhotoCard>    
+    </Flex>
+    <Flex Direction="column" Gap="1rem">
+        <PhotoCard Src="images/IMGP7410.jpg"></PhotoCard>
+        <PhotoCard Src="images/IMGP7058.jpg"></PhotoCard>
+        <PhotoCard Src="images/IMGP7244.jpg"></PhotoCard>    
+    </Flex>
+</Flex>
