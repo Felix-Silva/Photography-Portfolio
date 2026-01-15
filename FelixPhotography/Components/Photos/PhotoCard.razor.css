@@ -2,6 +2,7 @@
     width: 100%;
     height: fit-content;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 .photo:hover {
