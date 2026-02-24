@@ -3,3 +3,16 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+# User secrets and local settings
+appsettings.Development.json
+secrets.json
+# Rider
+.idea/
+# OS files
+.DS_Store
+Thumbs.db
+# NuGet
+*.nupkg
+packages/
+# Publish output
+publish/

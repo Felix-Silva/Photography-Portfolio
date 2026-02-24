@@ -2,8 +2,19 @@
 
 public partial class Gallery
 {
-    void OnPhotoClicked(string src)
+    private List<string> _photoUrls = new();
+
+    protected override async Task OnInitializedAsync()
     {
-        Console.WriteLine(src);
+        var container = BlobServiceClient.GetBlobContainerClient("photos");
+        await foreach (var blob in container.GetBlobsAsync())
+        {
+            _photoUrls.Add(container.GetBlobClient(blob.Name).Uri.ToString());
+        }
     }
+
+    private IEnumerable<string> GetColumn(int col) =>
+        _photoUrls.Where((_, i) => i % 3 == col);
+
+    private void OnPhotoClicked() { }
 }

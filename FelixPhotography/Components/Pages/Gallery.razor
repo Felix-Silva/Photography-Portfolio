@@ -1,23 +1,29 @@
 ﻿@page "/Gallery"
+@using Azure.Storage.Blobs
 @using FelixPhotography.Components.Flex
 @using FelixPhotography.Components.Photos
+@inject BlobServiceClient BlobServiceClient
+@inject IConfiguration Config
 
 <PageTitle>Gallery</PageTitle>
 
-<Flex Gap="1rem" Height="100%" Width="100%" Margin="1rem">
+<Flex Gap="1rem" Width="100%">
     <Flex Direction="column" Gap="1rem" Width="33%">
-        <PhotoCard Src="images/DSC03428.jpg" OnClick="OnPhotoClicked"></PhotoCard>
-        <PhotoCard Src="images/DSC03580.jpg" OnClick="OnPhotoClicked"></PhotoCard>
-        <PhotoCard Src="images/IMGP8104.jpg" OnClick="OnPhotoClicked"></PhotoCard>    
+        @foreach (var src in GetColumn(0))
+        {
+            <PhotoCard Src="@src" OnClick="OnPhotoClicked"></PhotoCard>
+        }
     </Flex>
     <Flex Direction="column" Gap="1rem" Width="33%">
-        <PhotoCard Src="images/IMGP6995.JPG" OnClick="OnPhotoClicked"></PhotoCard>
-        <PhotoCard Src="images/IMGP8550.jpg" OnClick="OnPhotoClicked"></PhotoCard>
-        <PhotoCard Src="images/IMGP7404.jpg" OnClick="OnPhotoClicked"></PhotoCard>    
+        @foreach (var src in GetColumn(1))
+        {
+            <PhotoCard Src="@src" OnClick="OnPhotoClicked"></PhotoCard>
+        }
     </Flex>
     <Flex Direction="column" Gap="1rem" Width="33%">
-        <PhotoCard Src="images/IMGP7410.jpg" OnClick="OnPhotoClicked"></PhotoCard>
-        <PhotoCard Src="images/IMGP7244.jpg" OnClick="OnPhotoClicked"></PhotoCard>    
-        <PhotoCard Src="images/IMGP7058.jpg" OnClick="OnPhotoClicked"></PhotoCard>
+        @foreach (var src in GetColumn(2))
+        {
+            <PhotoCard Src="@src" OnClick="OnPhotoClicked"></PhotoCard>
+        }
     </Flex>
 </Flex>

@@ -1,3 +1,4 @@
+using Azure.Storage.Blobs;
 using FelixPhotography.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddSingleton(x => 
+    new BlobServiceClient(builder.Configuration["AzureStorage:ConnectionString"]));
 
 var app = builder.Build();
 
